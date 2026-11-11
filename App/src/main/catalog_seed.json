@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "seed-0",
+  "updatedAt": "2026-11-11",
+  "source": "Başlangıç örneği (doğrulanmamış; yalnızca yörünge konumları). Gerçek veri için kendi katalog.json kaynağını yükle.",
+  "sourceUrl": null,
+  "satellites": [
+    { "id": "sat-13e-hotbird", "name": "Eutelsat Hot Bird", "operator": "Eutelsat", "position": 13.0, "status": "unverified", "continents": ["150"] },
+    { "id": "sat-19-2e-astra", "name": "Astra 19.2°E", "operator": "SES", "position": 19.2, "status": "unverified", "continents": ["150"] },
+    { "id": "sat-28-2e-astra", "name": "Astra 28.2°E", "operator": "SES", "position": 28.2, "status": "unverified", "continents": ["150"] },
+    { "id": "sat-42e-turksat", "name": "Türksat 42°E", "operator": "Türksat", "position": 42.0, "status": "unverified", "countries": ["TR"], "continents": ["150", "142"] },
+    { "id": "sat-7w-eutelsat", "name": "Eutelsat 7 West A", "operator": "Eutelsat", "position": -7.0, "status": "unverified" },
+    { "id": "sat-7w-nilesat", "name": "Nilesat 201", "operator": "Nilesat", "position": -7.0, "status": "unverified" }
+  ]
+}
