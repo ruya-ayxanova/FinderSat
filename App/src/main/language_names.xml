@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dil listesi. Yeni dil eklemek: buraya etiket+ad ekle, locales_config.xml'e etiketi yaz,
+     values-<kod>/strings.xml oluştur. Test eksikleri yakalar. -->
+<resources>
+    <string-array name="language_tags" translatable="false">
+        <item>tr</item>
+        <item>azb</item>
+        <item>az</item>
+        <item>az-Arab</item>
+        <item>fa</item>
+        <item>en</item>
+        <item>de</item>
+        <item>ru</item>
+        <item>ar</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>it</item>
+        <item>pt</item>
+        <item>zh</item>
+        <item>ja</item>
+        <item>ko</item>
+        <item>hi</item>
+        <item>ur</item>
+        <item>ckb</item>
+        <item>kmr</item>
+    </string-array>
+    <string-array name="language_names" translatable="false">
+        <item>Türkçe</item>
+        <item>تۆرکجه (گۆنئی آذربایجان)</item>
+        <item>Azərbaycan dili (Latın)</item>
+        <item>آذربایجان دیلی (عرب الفباسی)</item>
+        <item>فارسی</item>
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>Русский</item>
+        <item>العربية</item>
+        <item>Français</item>
+        <item>Español</item>
+        <item>Italiano</item>
+        <item>Português</item>
+        <item>中文</item>
+        <item>日本語</item>
+        <item>한국어</item>
+        <item>हिन्दी</item>
+        <item>اردو</item>
+        <item>کوردی (سۆرانی)</item>
+        <item>Kurdî (Kurmancî)</item>
+    </string-array>
+</resources>
