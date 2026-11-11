@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">Hamısı</string>
+    <string name="tab_favorites">Sevimlilər</string>
+    <string name="tab_inactive">Aktiv olmayanlar</string>
+    <string name="search_hint">Peyk, operator və ya mövqe axtar</string>
+    <string name="settings">Ayarlar</string>
+    <string name="language">Dil</string>
+    <string name="language_system">Sistem defoltu</string>
+    <string name="data_updated">Məlumatın yenilənmə tarixi: %1$s</string>
+    <string name="data_source">Mənbə: %1$s</string>
+    <string name="status_active">Aktiv</string>
+    <string name="status_inactive">Aktiv deyil</string>
+    <string name="status_unverified">Təsdiqlənməyib</string>
+    <string name="update_catalog">Kataloqu yenilə</string>
+    <string name="update_done">Kataloq yeniləndi</string>
+    <string name="update_failed">Yenilənmə uğursuz oldu; köhnə məlumat saxlanıldı</string>
+    <string name="no_results">Nəticə yoxdur</string>
+    <string name="transponders_none">Transponder məlumatı yoxdur</string>
+    <string name="pos_east">Ş</string>
+    <string name="pos_west">Q</string>
+    <string name="filter_all">Hamısı</string>
+</resources>
