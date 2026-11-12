@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">Все</string>
+    <string name="tab_favorites">Избранное</string>
+    <string name="tab_inactive">Неактивные</string>
+    <string name="search_hint">Поиск спутника, оператора или позиции</string>
+    <string name="settings">Настройки</string>
+    <string name="language">Язык</string>
+    <string name="language_system">Как в системе</string>
+    <string name="data_updated">Данные обновлены: %1$s</string>
+    <string name="data_source">Источник: %1$s</string>
+    <string name="status_active">Активен</string>
+    <string name="status_inactive">Неактивен</string>
+    <string name="status_unverified">Не подтверждён</string>
+    <string name="update_catalog">Обновить каталог</string>
+    <string name="update_done">Каталог обновлён</string>
+    <string name="update_failed">Не удалось обновить; старые данные сохранены</string>
+    <string name="no_results">Ничего не найдено</string>
+    <string name="transponders_none">Нет данных о транспондерах</string>
+    <string name="pos_east">в. д.</string>
+    <string name="pos_west">з. д.</string>
+    <string name="filter_all">Все</string>
+</resources>
