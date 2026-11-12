@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tab_all">Все</string>
-    <string name="tab_favorites">Избранное</string>
-    <string name="tab_inactive">Неактивные</string>
-    <string name="search_hint">Поиск спутника, оператора или позиции</string>
-    <string name="settings">Настройки</string>
-    <string name="language">Язык</string>
-    <string name="language_system">Как в системе</string>
-    <string name="data_updated">Данные обновлены: %1$s</string>
-    <string name="data_source">Источник: %1$s</string>
-    <string name="status_active">Активен</string>
-    <string name="status_inactive">Неактивен</string>
-    <string name="status_unverified">Не подтверждён</string>
-    <string name="update_catalog">Обновить каталог</string>
-    <string name="update_done">Каталог обновлён</string>
-    <string name="update_failed">Не удалось обновить; старые данные сохранены</string>
-    <string name="no_results">Ничего не найдено</string>
-    <string name="transponders_none">Нет данных о транспондерах</string>
-    <string name="pos_east">в. д.</string>
-    <string name="pos_west">з. д.</string>
-    <string name="filter_all">Все</string>
+    <string name="tab_all">全部</string>
+    <string name="tab_favorites">收藏</string>
+    <string name="tab_inactive">已停用</string>
+    <string name="search_hint">搜索卫星、运营商或轨位</string>
+    <string name="settings">设置</string>
+    <string name="language">语言</string>
+    <string name="language_system">跟随系统</string>
+    <string name="data_updated">数据更新时间：%1$s</string>
+    <string name="data_source">来源：%1$s</string>
+    <string name="status_active">在用</string>
+    <string name="status_inactive">已停用</string>
+    <string name="status_unverified">未核实</string>
+    <string name="update_catalog">更新目录</string>
+    <string name="update_done">目录已更新</string>
+    <string name="update_failed">更新失败，已保留原有数据</string>
+    <string name="no_results">无结果</string>
+    <string name="transponders_none">无转发器数据</string>
+    <string name="pos_east">东</string>
+    <string name="pos_west">西</string>
+    <string name="filter_all">全部</string>
 </resources>
