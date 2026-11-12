@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">Поиск спутника или оператора</string>
+    <string name="tab_active">Активные</string>
+    <string name="tab_inactive">Неактивные</string>
+    <string name="language">Язык</string>
+    <string name="language_system">Язык системы</string>
+    <string name="position_east">%1$.1f° в. д.</string>
+    <string name="position_west">%1$.1f° з. д.</string>
+    <string name="status_verified">Активен (подтверждено)</string>
+    <string name="status_unverified">Не подтверждено</string>
+    <string name="status_inactive">Неактивен</string>
+    <string name="catalog_info">Каталог v%1$s · %2$s · источник: %3$s</string>
+    <string name="no_results">Спутники не найдены</string>
+    <string name="filter_all">Все</string>
+    <string name="cont_eu">Европа</string>
+    <string name="cont_as">Азия</string>
+    <string name="cont_af">Африка</string>
+    <string name="cont_na">Северная Америка</string>
+    <string name="cont_sa">Южная Америка</string>
+    <string name="cont_oc">Океания</string>
+    <string name="favorites_only">Избранное</string>
+    <string name="no_transponders">Нет данных о транспондерах</string>
+    <string name="update_catalog">Обновить каталог</string>
+    <string name="update_ok">Каталог обновлён</string>
+    <string name="update_failed">Не удалось обновить. Прежние данные сохранены.</string>
+</resources>
