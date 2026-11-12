@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.prosatfinder"
-        minSdk = 26          // Android 8.0+; Android 11 (API 30) tam desteklenir
+        minSdk = 24          // Android 8.0+; Android 11 (API 30) tam desteklenir
         targetSdk = 34
         versionCode = 1
         versionName = "0.1.0"
