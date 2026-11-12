@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">Hemû</string>
+    <string name="tab_favorites">Bijare</string>
+    <string name="tab_inactive">Ne çalak</string>
+    <string name="search_hint">Li peyk, operator an cih bigere</string>
+    <string name="settings">Mîheng</string>
+    <string name="language">Ziman</string>
+    <string name="language_system">Bi default a pergalê</string>
+    <string name="data_updated">Dîroka nûvekirina daneyê: %1$s</string>
+    <string name="data_source">Çavkanî: %1$s</string>
+    <string name="status_active">Çalak</string>
+    <string name="status_inactive">Ne çalak</string>
+    <string name="status_unverified">Nehatiye piştrastkirin</string>
+    <string name="update_catalog">Katalogê nû bike</string>
+    <string name="update_done">Katalog hate nûkirin</string>
+    <string name="update_failed">Nûvekirin têk çû; daneyên berê hatin parastin</string>
+    <string name="no_results">Encam tune</string>
+    <string name="transponders_none">Daneya transponderê tune</string>
+    <string name="pos_east">E</string>
+    <string name="pos_west">W</string>
+    <string name="filter_all">Hemû</string>
+</resources>
