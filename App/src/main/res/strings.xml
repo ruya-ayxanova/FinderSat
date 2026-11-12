@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">همه</string>
+    <string name="tab_favorites">علاقه‌مندی‌ها</string>
+    <string name="tab_inactive">غیرفعال‌ها</string>
+    <string name="search_hint">جستجوی ماهواره، اپراتور یا موقعیت</string>
+    <string name="settings">تنظیمات</string>
+    <string name="language">زبان</string>
+    <string name="language_system">پیش‌فرض سیستم</string>
+    <string name="data_updated">تاریخ به‌روزرسانی داده‌ها: %1$s</string>
+    <string name="data_source">منبع: %1$s</string>
+    <string name="status_active">فعال</string>
+    <string name="status_inactive">غیرفعال</string>
+    <string name="status_unverified">تأییدنشده</string>
+    <string name="update_catalog">به‌روزرسانی فهرست</string>
+    <string name="update_done">فهرست به‌روزرسانی شد</string>
+    <string name="update_failed">به‌روزرسانی ناموفق بود؛ داده‌های قبلی حفظ شد</string>
+    <string name="no_results">نتیجه‌ای یافت نشد</string>
+    <string name="transponders_none">داده‌ای برای ترانسپوندر وجود ندارد</string>
+    <string name="pos_east">ش</string>
+    <string name="pos_west">غ</string>
+    <string name="filter_all">همه</string>
+</resources>
