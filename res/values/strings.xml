@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name" translatable="false">Pro SatFinder</string>
+    <string name="search_hint">Search satellite or operator</string>
+    <string name="tab_active">Active</string>
+    <string name="tab_inactive">Inactive</string>
+    <string name="language">Language</string>
+    <string name="language_system">System default</string>
+    <string name="position_east">%1$.1f°E</string>
+    <string name="position_west">%1$.1f°W</string>
+    <string name="status_verified">Verified active</string>
+    <string name="status_unverified">Not verified</string>
+    <string name="status_inactive">Inactive</string>
+    <string name="catalog_info">Catalog v%1$s · %2$s · source: %3$s</string>
+    <string name="no_results">No satellites found</string>
+    <string name="filter_all">All</string>
+    <string name="cont_eu">Europe</string>
+    <string name="cont_as">Asia</string>
+    <string name="cont_af">Africa</string>
+    <string name="cont_na">North America</string>
+    <string name="cont_sa">South America</string>
+    <string name="cont_oc">Oceania</string>
+    <string name="favorites_only">Favorites</string>
+    <string name="no_transponders">No transponder data</string>
+    <string name="update_catalog">Update catalog</string>
+    <string name="update_ok">Catalog updated</string>
+    <string name="update_failed">Update failed. Previous data kept.</string>
+</resources>
