@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">سب</string>
+    <string name="tab_favorites">پسندیدہ</string>
+    <string name="tab_inactive">غیر فعال</string>
+    <string name="search_hint">سیٹلائٹ، آپریٹر یا مقام تلاش کریں</string>
+    <string name="settings">ترتیبات</string>
+    <string name="language">زبان</string>
+    <string name="language_system">سسٹم کی ڈیفالٹ</string>
+    <string name="data_updated">ڈیٹا اپ ڈیٹ کی تاریخ: %1$s</string>
+    <string name="data_source">ماخذ: %1$s</string>
+    <string name="status_active">فعال</string>
+    <string name="status_inactive">غیر فعال</string>
+    <string name="status_unverified">غیر تصدیق شدہ</string>
+    <string name="update_catalog">کیٹلاگ اپ ڈیٹ کریں</string>
+    <string name="update_done">کیٹلاگ اپ ڈیٹ ہو گیا</string>
+    <string name="update_failed">اپ ڈیٹ ناکام رہا؛ پرانا ڈیٹا محفوظ رہا</string>
+    <string name="no_results">کوئی نتیجہ نہیں</string>
+    <string name="transponders_none">ٹرانسپونڈر کا ڈیٹا دستیاب نہیں</string>
+    <string name="pos_east">E</string>
+    <string name="pos_west">W</string>
+    <string name="filter_all">سب</string>
+</resources>
