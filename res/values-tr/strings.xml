@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">Uydu veya operatör ara</string>
+    <string name="tab_active">Aktif</string>
+    <string name="tab_inactive">Aktif olmayan</string>
+    <string name="language">Dil</string>
+    <string name="language_system">Sistem dili</string>
+    <string name="position_east">%1$.1f°D</string>
+    <string name="position_west">%1$.1f°B</string>
+    <string name="status_verified">Aktif (doğrulandı)</string>
+    <string name="status_unverified">Doğrulanmadı</string>
+    <string name="status_inactive">Aktif değil</string>
+    <string name="catalog_info">Katalog v%1$s · %2$s · kaynak: %3$s</string>
+    <string name="no_results">Uydu bulunamadı</string>
+    <string name="filter_all">Tümü</string>
+    <string name="cont_eu">Avrupa</string>
+    <string name="cont_as">Asya</string>
+    <string name="cont_af">Afrika</string>
+    <string name="cont_na">Kuzey Amerika</string>
+    <string name="cont_sa">Güney Amerika</string>
+    <string name="cont_oc">Okyanusya</string>
+    <string name="favorites_only">Favoriler</string>
+    <string name="no_transponders">Transponder verisi yok</string>
+    <string name="update_catalog">Kataloğu güncelle</string>
+    <string name="update_ok">Katalog güncellendi</string>
+    <string name="update_failed">Güncelleme başarısız. Önceki veri korundu.</string>
+</resources>
