@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">جستجوی ماهواره یا اپراتور</string>
+    <string name="tab_active">فعال</string>
+    <string name="tab_inactive">غیرفعال</string>
+    <string name="language">زبان</string>
+    <string name="language_system">زبان سیستم</string>
+    <string name="position_east">%1$.1f° شرقی</string>
+    <string name="position_west">%1$.1f° غربی</string>
+    <string name="status_verified">فعال (تأییدشده)</string>
+    <string name="status_unverified">تأییدنشده</string>
+    <string name="status_inactive">غیرفعال</string>
+    <string name="catalog_info">فهرست v%1$s · %2$s · منبع: %3$s</string>
+    <string name="no_results">ماهواره‌ای یافت نشد</string>
+    <string name="filter_all">همه</string>
+    <string name="cont_eu">اروپا</string>
+    <string name="cont_as">آسیا</string>
+    <string name="cont_af">آفریقا</string>
+    <string name="cont_na">آمریکای شمالی</string>
+    <string name="cont_sa">آمریکای جنوبی</string>
+    <string name="cont_oc">اقیانوسیه</string>
+    <string name="favorites_only">علاقه‌مندی‌ها</string>
+    <string name="no_transponders">داده‌ی ترانسپوندر موجود نیست</string>
+    <string name="update_catalog">به‌روزرسانی فهرست</string>
+    <string name="update_ok">فهرست به‌روزرسانی شد</string>
+    <string name="update_failed">به‌روزرسانی ناموفق بود. داده‌های قبلی حفظ شد.</string>
+</resources>
