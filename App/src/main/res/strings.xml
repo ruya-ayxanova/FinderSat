@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">Tutti</string>
+    <string name="tab_favorites">Preferiti</string>
+    <string name="tab_inactive">Inattivi</string>
+    <string name="search_hint">Cerca satellite, operatore o posizione</string>
+    <string name="settings">Impostazioni</string>
+    <string name="language">Lingua</string>
+    <string name="language_system">Predefinito di sistema</string>
+    <string name="data_updated">Dati aggiornati il: %1$s</string>
+    <string name="data_source">Fonte: %1$s</string>
+    <string name="status_active">Attivo</string>
+    <string name="status_inactive">Inattivo</string>
+    <string name="status_unverified">Non verificato</string>
+    <string name="update_catalog">Aggiorna catalogo</string>
+    <string name="update_done">Catalogo aggiornato</string>
+    <string name="update_failed">Aggiornamento non riuscito; dati precedenti conservati</string>
+    <string name="no_results">Nessun risultato</string>
+    <string name="transponders_none">Nessun dato sui transponder</string>
+    <string name="pos_east">E</string>
+    <string name="pos_west">O</string>
+    <string name="filter_all">Tutti</string>
+</resources>
