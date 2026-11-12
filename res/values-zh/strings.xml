@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">搜索卫星或运营商</string>
+    <string name="tab_active">在用</string>
+    <string name="tab_inactive">停用</string>
+    <string name="language">语言</string>
+    <string name="language_system">跟随系统</string>
+    <string name="position_east">东经 %1$.1f°</string>
+    <string name="position_west">西经 %1$.1f°</string>
+    <string name="status_verified">在用（已核实）</string>
+    <string name="status_unverified">未核实</string>
+    <string name="status_inactive">已停用</string>
+    <string name="catalog_info">目录 v%1$s · %2$s · 来源：%3$s</string>
+    <string name="no_results">未找到卫星</string>
+    <string name="filter_all">全部</string>
+    <string name="cont_eu">欧洲</string>
+    <string name="cont_as">亚洲</string>
+    <string name="cont_af">非洲</string>
+    <string name="cont_na">北美洲</string>
+    <string name="cont_sa">南美洲</string>
+    <string name="cont_oc">大洋洲</string>
+    <string name="favorites_only">收藏</string>
+    <string name="no_transponders">无转发器数据</string>
+    <string name="update_catalog">更新目录</string>
+    <string name="update_ok">目录已更新</string>
+    <string name="update_failed">更新失败，已保留之前的数据</string>
+</resources>
