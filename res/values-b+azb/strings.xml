@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">ماهواره یا اوپراتور آختار</string>
+    <string name="tab_active">فعال</string>
+    <string name="tab_inactive">غیرفعال</string>
+    <string name="language">دیل</string>
+    <string name="language_system">سیستم دیلی</string>
+    <string name="position_east">%1$.1f° شرق</string>
+    <string name="position_west">%1$.1f° غرب</string>
+    <string name="status_verified">فعال (تأیید اولونوب)</string>
+    <string name="status_unverified">تأیید اولونمایب</string>
+    <string name="status_inactive">فعال دئییل</string>
+    <string name="catalog_info">کاتالوق v%1$s · %2$s · قایناق: %3$s</string>
+    <string name="no_results">ماهواره تاپیلمادی</string>
+    <string name="filter_all">هامیسی</string>
+    <string name="cont_eu">آوروپا</string>
+    <string name="cont_as">آسیا</string>
+    <string name="cont_af">آفریقا</string>
+    <string name="cont_na">شیمالی آمریکا</string>
+    <string name="cont_sa">جنوبی آمریکا</string>
+    <string name="cont_oc">اوقیانوسیه</string>
+    <string name="favorites_only">سئویلنلر</string>
+    <string name="no_transponders">ترانسپوندر معلوماتی یوخدور</string>
+    <string name="update_catalog">کاتالوقو یئنیله</string>
+    <string name="update_ok">کاتالوق یئنیلندی</string>
+    <string name="update_failed">یئنیلمه اوغورسوز اولدو. ائسکی معلومات ساخلانیلدی</string>
+</resources>
