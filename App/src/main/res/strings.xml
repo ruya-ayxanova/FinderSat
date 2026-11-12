@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">सभी</string>
+    <string name="tab_favorites">पसंदीदा</string>
+    <string name="tab_inactive">निष्क्रिय</string>
+    <string name="search_hint">उपग्रह, ऑपरेटर या स्थान खोजें</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="language">भाषा</string>
+    <string name="language_system">सिस्टम डिफ़ॉल्ट</string>
+    <string name="data_updated">डेटा अपडेट की तारीख: %1$s</string>
+    <string name="data_source">स्रोत: %1$s</string>
+    <string name="status_active">सक्रिय</string>
+    <string name="status_inactive">निष्क्रिय</string>
+    <string name="status_unverified">असत्यापित</string>
+    <string name="update_catalog">कैटलॉग अपडेट करें</string>
+    <string name="update_done">कैटलॉग अपडेट हो गया</string>
+    <string name="update_failed">अपडेट विफल रहा; पुराना डेटा सुरक्षित रखा गया</string>
+    <string name="no_results">कोई परिणाम नहीं</string>
+    <string name="transponders_none">ट्रांसपोंडर डेटा उपलब्ध नहीं</string>
+    <string name="pos_east">पू</string>
+    <string name="pos_west">प</string>
+    <string name="filter_all">सभी</string>
+</resources>
