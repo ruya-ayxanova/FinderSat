@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">すべて</string>
+    <string name="tab_favorites">お気に入り</string>
+    <string name="tab_inactive">非稼働</string>
+    <string name="search_hint">衛星、事業者、軌道位置を検索</string>
+    <string name="settings">設定</string>
+    <string name="language">言語</string>
+    <string name="language_system">システムのデフォルト</string>
+    <string name="data_updated">データ更新日：%1$s</string>
+    <string name="data_source">情報源：%1$s</string>
+    <string name="status_active">稼働中</string>
+    <string name="status_inactive">非稼働</string>
+    <string name="status_unverified">未確認</string>
+    <string name="update_catalog">カタログを更新</string>
+    <string name="update_done">カタログを更新しました</string>
+    <string name="update_failed">更新に失敗しました。以前のデータを保持しました</string>
+    <string name="no_results">結果なし</string>
+    <string name="transponders_none">トランスポンダー情報なし</string>
+    <string name="pos_east">東</string>
+    <string name="pos_west">西</string>
+    <string name="filter_all">すべて</string>
+</resources>
