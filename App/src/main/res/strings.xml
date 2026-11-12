@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">هەموو</string>
+    <string name="tab_favorites">دڵخوازەکان</string>
+    <string name="tab_inactive">ناچالاکەکان</string>
+    <string name="search_hint">گەڕان بەدوای مانگی دەستکرد، ئۆپەراتۆر یان شوێن</string>
+    <string name="settings">ڕێکخستنەکان</string>
+    <string name="language">زمان</string>
+    <string name="language_system">بنەڕەتی سیستەم</string>
+    <string name="data_updated">بەرواری نوێکردنەوەی داتا: %1$s</string>
+    <string name="data_source">سەرچاوە: %1$s</string>
+    <string name="status_active">چالاک</string>
+    <string name="status_inactive">ناچالاک</string>
+    <string name="status_unverified">پشتڕاستنەکراو</string>
+    <string name="update_catalog">نوێکردنەوەی کاتالۆگ</string>
+    <string name="update_done">کاتالۆگ نوێکرایەوە</string>
+    <string name="update_failed">نوێکردنەوە سەرکەوتوو نەبوو؛ داتای کۆن پارێزرا</string>
+    <string name="no_results">ئەنجام نییە</string>
+    <string name="transponders_none">داتای ترانسپۆندەر نییە</string>
+    <string name="pos_east">E</string>
+    <string name="pos_west">W</string>
+    <string name="filter_all">هەموو</string>
+</resources>
