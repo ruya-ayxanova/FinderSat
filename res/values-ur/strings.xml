@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">سیٹلائٹ یا آپریٹر تلاش کریں</string>
+    <string name="tab_active">فعال</string>
+    <string name="tab_inactive">غیر فعال</string>
+    <string name="language">زبان</string>
+    <string name="language_system">سسٹم ڈیفالٹ</string>
+    <string name="position_east">%1$.1f° مشرق</string>
+    <string name="position_west">%1$.1f° مغرب</string>
+    <string name="status_verified">فعال (تصدیق شدہ)</string>
+    <string name="status_unverified">غیر تصدیق شدہ</string>
+    <string name="status_inactive">غیر فعال</string>
+    <string name="catalog_info">کیٹلاگ v%1$s · %2$s · ماخذ: %3$s</string>
+    <string name="no_results">کوئی سیٹلائٹ نہیں ملا</string>
+    <string name="filter_all">سب</string>
+    <string name="cont_eu">یورپ</string>
+    <string name="cont_as">ایشیا</string>
+    <string name="cont_af">افریقہ</string>
+    <string name="cont_na">شمالی امریکہ</string>
+    <string name="cont_sa">جنوبی امریکہ</string>
+    <string name="cont_oc">اوشیانا</string>
+    <string name="favorites_only">پسندیدہ</string>
+    <string name="no_transponders">ٹرانسپونڈر کا ڈیٹا دستیاب نہیں</string>
+    <string name="update_catalog">کیٹلاگ اپ ڈیٹ کریں</string>
+    <string name="update_ok">کیٹلاگ اپ ڈیٹ ہو گیا</string>
+    <string name="update_failed">اپ ڈیٹ ناکام رہا۔ پچھلا ڈیٹا محفوظ ہے۔</string>
+</resources>
