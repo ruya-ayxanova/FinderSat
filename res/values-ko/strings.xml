@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">위성 또는 사업자 검색</string>
+    <string name="tab_active">운용 중</string>
+    <string name="tab_inactive">운용 종료</string>
+    <string name="language">언어</string>
+    <string name="language_system">시스템 기본값</string>
+    <string name="position_east">동경 %1$.1f°</string>
+    <string name="position_west">서경 %1$.1f°</string>
+    <string name="status_verified">운용 중 (확인됨)</string>
+    <string name="status_unverified">미확인</string>
+    <string name="status_inactive">운용 종료</string>
+    <string name="catalog_info">카탈로그 v%1$s · %2$s · 출처: %3$s</string>
+    <string name="no_results">위성을 찾을 수 없습니다</string>
+    <string name="filter_all">전체</string>
+    <string name="cont_eu">유럽</string>
+    <string name="cont_as">아시아</string>
+    <string name="cont_af">아프리카</string>
+    <string name="cont_na">북아메리카</string>
+    <string name="cont_sa">남아메리카</string>
+    <string name="cont_oc">오세아니아</string>
+    <string name="favorites_only">즐겨찾기</string>
+    <string name="no_transponders">트랜스폰더 데이터 없음</string>
+    <string name="update_catalog">카탈로그 업데이트</string>
+    <string name="update_ok">카탈로그가 업데이트되었습니다</string>
+    <string name="update_failed">업데이트 실패. 이전 데이터를 유지했습니다.</string>
+</resources>
