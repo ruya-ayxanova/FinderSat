@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">उपग्रह या ऑपरेटर खोजें</string>
+    <string name="tab_active">सक्रिय</string>
+    <string name="tab_inactive">निष्क्रिय</string>
+    <string name="language">भाषा</string>
+    <string name="language_system">सिस्टम डिफ़ॉल्ट</string>
+    <string name="position_east">%1$.1f° पूर्व</string>
+    <string name="position_west">%1$.1f° पश्चिम</string>
+    <string name="status_verified">सक्रिय (सत्यापित)</string>
+    <string name="status_unverified">असत्यापित</string>
+    <string name="status_inactive">निष्क्रिय</string>
+    <string name="catalog_info">कैटलॉग v%1$s · %2$s · स्रोत: %3$s</string>
+    <string name="no_results">कोई उपग्रह नहीं मिला</string>
+    <string name="filter_all">सभी</string>
+    <string name="cont_eu">यूरोप</string>
+    <string name="cont_as">एशिया</string>
+    <string name="cont_af">अफ़्रीका</string>
+    <string name="cont_na">उत्तरी अमेरिका</string>
+    <string name="cont_sa">दक्षिणी अमेरिका</string>
+    <string name="cont_oc">ओशिनिया</string>
+    <string name="favorites_only">पसंदीदा</string>
+    <string name="no_transponders">ट्रांसपोंडर डेटा उपलब्ध नहीं</string>
+    <string name="update_catalog">कैटलॉग अपडेट करें</string>
+    <string name="update_ok">कैटलॉग अपडेट हो गया</string>
+    <string name="update_failed">अपडेट विफल रहा। पिछला डेटा सुरक्षित है।</string>
+</resources>
