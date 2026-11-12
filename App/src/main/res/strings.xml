@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tab_all">سب</string>
-    <string name="tab_favorites">پسندیدہ</string>
-    <string name="tab_inactive">غیر فعال</string>
-    <string name="search_hint">سیٹلائٹ، آپریٹر یا مقام تلاش کریں</string>
-    <string name="settings">ترتیبات</string>
-    <string name="language">زبان</string>
-    <string name="language_system">سسٹم کی ڈیفالٹ</string>
-    <string name="data_updated">ڈیٹا اپ ڈیٹ کی تاریخ: %1$s</string>
-    <string name="data_source">ماخذ: %1$s</string>
-    <string name="status_active">فعال</string>
-    <string name="status_inactive">غیر فعال</string>
-    <string name="status_unverified">غیر تصدیق شدہ</string>
-    <string name="update_catalog">کیٹلاگ اپ ڈیٹ کریں</string>
-    <string name="update_done">کیٹلاگ اپ ڈیٹ ہو گیا</string>
-    <string name="update_failed">اپ ڈیٹ ناکام رہا؛ پرانا ڈیٹا محفوظ رہا</string>
-    <string name="no_results">کوئی نتیجہ نہیں</string>
-    <string name="transponders_none">ٹرانسپونڈر کا ڈیٹا دستیاب نہیں</string>
-    <string name="pos_east">E</string>
-    <string name="pos_west">W</string>
-    <string name="filter_all">سب</string>
+    <string name="tab_all">Tümü</string>
+    <string name="tab_favorites">Favoriler</string>
+    <string name="tab_inactive">Aktif olmayanlar</string>
+    <string name="search_hint">Uydu, operatör veya konum ara</string>
+    <string name="settings">Ayarlar</string>
+    <string name="language">Dil</string>
+    <string name="language_system">Sistem varsayılanı</string>
+    <string name="data_updated">Veri güncelleme tarihi: %1$s</string>
+    <string name="data_source">Kaynak: %1$s</string>
+    <string name="status_active">Aktif</string>
+    <string name="status_inactive">Aktif değil</string>
+    <string name="status_unverified">Doğrulanmadı</string>
+    <string name="update_catalog">Kataloğu güncelle</string>
+    <string name="update_done">Katalog güncellendi</string>
+    <string name="update_failed">Güncelleme başarısız; eski veri korundu</string>
+    <string name="no_results">Sonuç yok</string>
+    <string name="transponders_none">Transponder verisi yok</string>
+    <string name="pos_east">D</string>
+    <string name="pos_west">B</string>
+    <string name="filter_all">Tümü</string>
 </resources>
