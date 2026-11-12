@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">Cerca satellite o operatore</string>
+    <string name="tab_active">Attivi</string>
+    <string name="tab_inactive">Inattivi</string>
+    <string name="language">Lingua</string>
+    <string name="language_system">Lingua di sistema</string>
+    <string name="position_east">%1$.1f° E</string>
+    <string name="position_west">%1$.1f° O</string>
+    <string name="status_verified">Attivo (verificato)</string>
+    <string name="status_unverified">Non verificato</string>
+    <string name="status_inactive">Inattivo</string>
+    <string name="catalog_info">Catalogo v%1$s · %2$s · fonte: %3$s</string>
+    <string name="no_results">Nessun satellite trovato</string>
+    <string name="filter_all">Tutti</string>
+    <string name="cont_eu">Europa</string>
+    <string name="cont_as">Asia</string>
+    <string name="cont_af">Africa</string>
+    <string name="cont_na">Nord America</string>
+    <string name="cont_sa">Sud America</string>
+    <string name="cont_oc">Oceania</string>
+    <string name="favorites_only">Preferiti</string>
+    <string name="no_transponders">Nessun dato sui transponder</string>
+    <string name="update_catalog">Aggiorna catalogo</string>
+    <string name="update_ok">Catalogo aggiornato</string>
+    <string name="update_failed">Aggiornamento non riuscito. Dati precedenti conservati.</string>
+</resources>
