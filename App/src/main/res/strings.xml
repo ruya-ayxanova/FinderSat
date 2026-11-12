@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_all">هامیسی</string>
+    <string name="tab_favorites">سئویملیلر</string>
+    <string name="tab_inactive">آکتیو اولمایانلار</string>
+    <string name="search_hint">پیک، اوپراتور یا مؤقع آختار</string>
+    <string name="settings">تنظیملر</string>
+    <string name="language">دیل</string>
+    <string name="language_system">سیستم پیش‌فرضی</string>
+    <string name="data_updated">داده یئنیلنمه تاریخی: %1$s</string>
+    <string name="data_source">منبع: %1$s</string>
+    <string name="status_active">آکتیو</string>
+    <string name="status_inactive">آکتیو دئیل</string>
+    <string name="status_unverified">تأیید اولونماییب</string>
+    <string name="update_catalog">کاتالوقو یئنیله</string>
+    <string name="update_done">کاتالوق یئنیلندی</string>
+    <string name="update_failed">یئنیلمه اوغورسوز اولدو؛ اسکی داده ساخلانیلدی</string>
+    <string name="no_results">نتیجه یوخدور</string>
+    <string name="transponders_none">ترانسپوندر داده‌سی یوخدور</string>
+    <string name="pos_east">ش</string>
+    <string name="pos_west">غ</string>
+    <string name="filter_all">هامیسی</string>
+</resources>
