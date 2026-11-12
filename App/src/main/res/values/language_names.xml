@@ -21,8 +21,6 @@
         <item>ko</item>
         <item>hi</item>
         <item>ur</item>
-        <item>ckb</item>
-        <item>kmr</item>
     </string-array>
     <string-array name="language_names" translatable="false">
         <item>Türkçe</item>
