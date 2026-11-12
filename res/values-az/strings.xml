@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">Peyk və ya operator axtar</string>
+    <string name="tab_active">Aktiv</string>
+    <string name="tab_inactive">Qeyri-aktiv</string>
+    <string name="language">Dil</string>
+    <string name="language_system">Sistem dili</string>
+    <string name="position_east">%1$.1f° şərq</string>
+    <string name="position_west">%1$.1f° qərb</string>
+    <string name="status_verified">Aktiv (təsdiqlənib)</string>
+    <string name="status_unverified">Təsdiqlənməyib</string>
+    <string name="status_inactive">Aktiv deyil</string>
+    <string name="catalog_info">Kataloq v%1$s · %2$s · mənbə: %3$s</string>
+    <string name="no_results">Peyk tapılmadı</string>
+    <string name="filter_all">Hamısı</string>
+    <string name="cont_eu">Avropa</string>
+    <string name="cont_as">Asiya</string>
+    <string name="cont_af">Afrika</string>
+    <string name="cont_na">Şimali Amerika</string>
+    <string name="cont_sa">Cənubi Amerika</string>
+    <string name="cont_oc">Okeaniya</string>
+    <string name="favorites_only">Sevimlilər</string>
+    <string name="no_transponders">Transponder məlumatı yoxdur</string>
+    <string name="update_catalog">Kataloqu yenilə</string>
+    <string name="update_ok">Kataloq yeniləndi</string>
+    <string name="update_failed">Yeniləmə uğursuz oldu. Əvvəlki məlumat saxlanıldı.</string>
+</resources>
