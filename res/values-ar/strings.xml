@@ -1,0 +1,26 @@
+<resources>
+    <string name="search_hint">ابحث عن قمر صناعي أو مشغّل</string>
+    <string name="tab_active">نشطة</string>
+    <string name="tab_inactive">غير نشطة</string>
+    <string name="language">اللغة</string>
+    <string name="language_system">لغة النظام</string>
+    <string name="position_east">%1$.1f° شرقًا</string>
+    <string name="position_west">%1$.1f° غربًا</string>
+    <string name="status_verified">نشط (تم التحقق)</string>
+    <string name="status_unverified">لم يتم التحقق</string>
+    <string name="status_inactive">غير نشط</string>
+    <string name="catalog_info">الفهرس v%1$s · %2$s · المصدر: %3$s</string>
+    <string name="no_results">لم يتم العثور على أقمار</string>
+    <string name="filter_all">الكل</string>
+    <string name="cont_eu">أوروبا</string>
+    <string name="cont_as">آسيا</string>
+    <string name="cont_af">أفريقيا</string>
+    <string name="cont_na">أمريكا الشمالية</string>
+    <string name="cont_sa">أمريكا الجنوبية</string>
+    <string name="cont_oc">أوقيانوسيا</string>
+    <string name="favorites_only">المفضلة</string>
+    <string name="no_transponders">لا توجد بيانات للمرسلات</string>
+    <string name="update_catalog">تحديث الفهرس</string>
+    <string name="update_ok">تم تحديث الفهرس</string>
+    <string name="update_failed">فشل التحديث. تم الاحتفاظ بالبيانات السابقة.</string>
+</resources>
