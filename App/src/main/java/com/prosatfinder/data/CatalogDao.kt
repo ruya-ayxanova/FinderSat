@@ -13,8 +13,19 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 abstract class CatalogDao {
-    @Query("SELECT * FROM satellites ORDER BY position, name")
-    abstract fun satellites(): Flow<List<SatelliteEntity>>
+ @Query(
+        "SELECT * FROM satellites WHERE " +
+        "(:q = '' OR name LIKE '%' || :q || '%' OR operator LIKE '%' || :q || '%') AND " +
+        "((:inactive = 0 AND status != 'INACTIVE') OR (:inactive = 1 AND status = 'INACTIVE')) AND " +
+        "(:cont = '' OR (',' || regions || ',') LIKE '%,' || :cont || ',%') AND " +
+        "(:country = '' OR (',' || regions || ',') LIKE '%,' || :country || ',%') AND " +
+        "(:favOnly = 0 OR id IN (SELECT satId FROM favorites)) " +
+        "ORDER BY position, name"
+    )
+    abstract fun search(q: String, inactive: Int, cont: String, country: String, favOnly: Int): Flow<List<Satellite>>
+
+    @Query("SELECT regions FROM satellites")
+    abstract fun allRegions(): Flow<List<String>>
 
     @Query("SELECT satId FROM favorites")
     abstract fun favorites(): Flow<List<String>>
