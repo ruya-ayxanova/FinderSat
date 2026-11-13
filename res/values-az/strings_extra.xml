@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">Əvvəlki kataloqu bərpa et</string>
+    <string name="restore_ok">Əvvəlki kataloq bərpa edildi</string>
+    <string name="restore_failed">Bərpa üçün ehtiyat nüsxə yoxdur</string>
+    <string name="data_stale">Məlumat %1$d gün köhnədir. Zəhmət olmasa yeniləyin.</string>
+</resources>
