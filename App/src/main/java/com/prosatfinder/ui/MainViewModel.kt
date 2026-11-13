@@ -72,7 +72,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     suspend fun transponders(id: String) = dao.transponders(id)
 
-    suspend fun update(url: String): Boolean {
+    suspend fun update(url: String    fun restore() = viewModelScope.launch {
+        val r = repo.restoreLatestBackup()
+        meta.value = repo.meta()
+        status.value = if (r.isSuccess) R.string.restore_ok else R.string.restore_failed
+    }): Boolean {
         repo.updateUrl = url
         return runCatching { repo.update(url) }.isSuccess
     }
