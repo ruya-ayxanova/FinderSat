@@ -3,106 +3,94 @@ package com.prosatfinder.data
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.json.Json
+import org.json.JSONObject
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
 
-/**
- * Katalog verisinin kaynağı filesDir/catalog/catalog.json dosyasıdır; Room onun aranabilir kopyasıdır.
- * Uygulama dilinden tamamen bağımsızdır. İnternet yalnızca update() içinde kullanılır.
- */
-class CatalogRepository(private val context: Context, private val dao: CatalogDao) {
-    private val json = Json { ignoreUnknownKeys = true }
-    private val dir = File(context.filesDir, "catalog")
-    private val catalogFile = File(dir, "catalog.json")
-    private val backupDir = File(dir, "backups")
-    private val prefs = context.getSharedPreferences("catalog", Context.MODE_PRIVATE)
+data class CatalogMeta(val version: Int, val source: String, val date: String)
+data class ParsedCatalog(val meta: CatalogMeta, val sats: List<Satellite>, val trs: List<Transponder>)
 
-    var updateUrl: String
-        get() = prefs.getString("updateUrl", "") ?: ""
-        set(v) = prefs.edit().putString("updateUrl", v.trim()).apply()
+object CatalogParser {
+    private fun JSONObject.str(k: String) = if (has(k) && !isNull(k)) getString(k) else null
+    private fun JSONObject.int(k: String) = if (has(k) && !isNull(k)) getInt(k) else null
+    private fun JSONObject.dbl(k: String) = if (has(k) && !isNull(k)) getDouble(k) else null
 
-    /** İlk açılış: assets'teki başlangıç katalogunu kopyalar ve içe aktarır. İnternet gerekmez. */
-    suspend fun ensureLoaded() = withContext(Dispatchers.IO) {
-        dir.mkdirs()
-        if (!catalogFile.exists()) {
-            context.assets.open("catalog_seed.json").use { i -> catalogFile.outputStream().use { i.copyTo(it) } }
+    fun parse(text: String): ParsedCatalog {
+        val root = JSONObject(text)
+        val m = root.getJSONObject("meta")
+        val meta = CatalogMeta(m.getInt("version"), m.getString("source"), m.getString("date"))
+        val sats = ArrayList<Satellite>()
+        val trs = ArrayList<Transponder>()
+        val arr = root.getJSONArray("satellites")
+        for (i in 0 until arr.length()) {
+            val o = arr.getJSONObject(i)
+            val id = o.getString("id")
+            val status = o.str("status") ?: "UNVERIFIED"
+            require(status in setOf("VERIFIED_ACTIVE", "UNVERIFIED", "INACTIVE")) { "Geçersiz status: $id" }
+            val pos = o.dbl("position")
+            require(pos == null || pos in -180.0..180.0) { "Geçersiz konum: $id" }
+            val reg = o.optJSONArray("regions")
+            sats += Satellite(
+                id, o.getString("name"), o.str("operator"), pos, status,
+                (0 until (reg?.length() ?: 0)).joinToString(",") { reg!!.getString(it) }
+            )
+            val ta = o.optJSONArray("transponders")
+            for (j in 0 until (ta?.length() ?: 0)) {
+                val t = ta!!.getJSONObject(j)
+                trs += Transponder(
+                    satId = id, frequencyMhz = t.int("freq"), polarization = t.str("pol"),
+                    symbolRate = t.int("sr"), fec = t.str("fec"), band = t.str("band")
+                )
+            }
         }
-        if (dao.metaCount() == 0) apply(parse(catalogFile.readText()))
+        return ParsedCatalog(meta, sats, trs)
+    }
+}
+
+class CatalogRepository(private val ctx: Context, private val db: AppDatabase) {
+    private val dir = File(ctx.filesDir, "catalog").apply { mkdirs() }
+    private val current = File(dir, "current.json")
+    private val backups = File(dir, "backup").apply { mkdirs() }
+
+    suspend fun ensureLoaded() = withContext(Dispatchers.IO) {
+        if (!current.exists())
+            current.writeText(ctx.assets.open("catalog_seed.json").bufferedReader().use { it.readText() })
+        if (db.dao().count() == 0) {
+            val p = CatalogParser.parse(current.readText())
+            db.dao().replaceAll(p.sats, p.trs)
+        }
     }
 
-    /** Verilen HTTPS adresinden yeni katalog indirir. Doğrulanmadan hiçbir şey değişmez; eski dosya yedeklenir. */
-    suspend fun update(urlStr: String) = withContext(Dispatchers.IO) {
-        val url = URL(urlStr.trim())
-            fun hasBackup(): Boolean = backups.listFiles()?.isNotEmpty() == true
+    fun meta(): CatalogMeta? = runCatching { CatalogParser.parse(current.readText()).meta }.getOrNull()
 
-    /** En son yedeği geri yükler. Şu anki katalog da yeni bir yedek olarak saklanır. */
+    suspend fun install(text: String) = withContext(Dispatchers.IO) {
+        val parsed = CatalogParser.parse(text)
+        if (current.exists())
+            current.copyTo(File(backups, "catalog_${System.currentTimeMillis()}.json"), overwrite = true)
+        backups.listFiles()?.sortedByDescending { it.name }?.drop(3)?.forEach { it.delete() }
+        val tmp = File(dir, "new.tmp").apply { writeText(text) }
+        tmp.renameTo(current)
+        db.dao().replaceAll(parsed.sats, parsed.trs)
+    }
+
+    suspend fun update(url: String): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching {
+            require(url.startsWith("https://")) { "Yalnızca HTTPS" }
+            val c = URL(url).openConnection() as HttpURLConnection
+            c.connectTimeout = 10_000
+            c.readTimeout = 20_000
+            val text = c.inputStream.bufferedReader().use { it.readText() }
+            install(text)
+        }
+    }
+
+    fun hasBackup(): Boolean = backups.listFiles()?.isNotEmpty() == true
+
     suspend fun restoreLatestBackup(): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
-            val latest = backups.listFiles()?.maxByOrNull { it.name }
-                ?: error("Yedek yok")
+            val latest = backups.listFiles()?.maxByOrNull { it.name } ?: error("Yedek yok")
             install(latest.readText())
         }
-    }
-        require(url.protocol == "https") { "Yalnızca https desteklenir" }
-        val conn = url.openConnection() as HttpURLConnection
-        conn.connectTimeout = 15_000
-        conn.readTimeout = 30_000
-        val text = try {
-            require(conn.responseCode == 200) { "HTTP ${conn.responseCode}" }
-            require(conn.contentLengthLong <= MAX_BYTES) { "Dosya çok büyük" }
-            conn.inputStream.bufferedReader().use { it.readText() }
-        } finally { conn.disconnect() }
-        require(text.length <= MAX_BYTES) { "Dosya çok büyük" }
-
-        val parsed = parse(text)        // doğrulama burada; hata varsa fırlatır, hiçbir şey değişmez
-        backup()
-        try {
-            dir.mkdirs()
-            val tmp = File(dir, "catalog.json.tmp")
-            tmp.writeText(text)
-            check(tmp.renameTo(catalogFile) || (catalogFile.delete() && tmp.renameTo(catalogFile))) { "Yazılamadı" }
-            apply(parsed)
-        } catch (e: Exception) {
-            restoreLatestBackup()
-            throw e
-        }
-    }
-
-    private fun parse(text: String): CatalogFile {
-        val f = json.decodeFromString<CatalogFile>(text)
-        val errors = CatalogValidator.validate(f)
-        require(errors.isEmpty()) { errors.take(5).joinToString("; ") }
-        return f
-    }
-
-    private suspend fun apply(f: CatalogFile) {
-        val sats = f.satellites.map {
-            SatelliteEntity(it.id, it.name, it.operator, it.position, it.status,
-                it.countries.joinToString(","), it.continents.joinToString(","), it.checkedDate)
-        }
-        val tps = f.satellites.flatMap { s ->
-            s.transponders.map { TransponderEntity(satId = s.id, band = it.band, freqMhz = it.freqMhz,
-                pol = it.pol, symbolRate = it.symbolRate, fec = it.fec, label = it.label) }
-        }
-        dao.replaceCatalog(sats, tps,
-            CatalogMetaEntity(0, f.dataVersion, f.updatedAt, f.source, f.sourceUrl, System.currentTimeMillis()))
-    }
-
-    private fun backup() {
-        if (!catalogFile.exists()) return
-        backupDir.mkdirs()
-        catalogFile.copyTo(File(backupDir, "catalog-${System.currentTimeMillis()}.json"), overwrite = true)
-        backupDir.listFiles()?.sortedBy { it.name }?.dropLast(MAX_BACKUPS)?.forEach { it.delete() }
-    }
-
-    private fun restoreLatestBackup() {
-        backupDir.listFiles()?.maxByOrNull { it.name }?.copyTo(catalogFile, overwrite = true)
-    }
-
-    companion object {
-        private const val MAX_BYTES = 20L * 1024 * 1024
-        private const val MAX_BACKUPS = 5
     }
 }
