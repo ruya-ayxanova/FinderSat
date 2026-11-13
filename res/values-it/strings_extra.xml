@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">Ripristina catalogo precedente</string>
+    <string name="restore_ok">Catalogo precedente ripristinato</string>
+    <string name="restore_failed">Nessun backup da ripristinare</string>
+    <string name="data_stale">I dati hanno %1$d giorni. Aggiorna.</string>
+</resources>
