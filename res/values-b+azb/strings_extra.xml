@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">ائسکی کاتالوقو گئری یوکله</string>
+    <string name="restore_ok">ائسکی کاتالوق گئری یوکلندی</string>
+    <string name="restore_failed">گئری یوکلنه‌جک یدک یوخدور</string>
+    <string name="data_stale">معلومات %1$d گون ائسکیدیر. لوطفاً یئنیله.</string>
+</resources>
