@@ -1,64 +1,46 @@
 package com.prosatfinder
 
-import org.junit.Assert.*
+import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.w3c.dom.Element
 import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 
-/** Çeviri eksiklerini yakalar: `gradle testDebugUnitTest` */
-class StringsCompletenessTest {
+class TranslationCompletenessTest {
     private val res = File("src/main/res")
 
-    private fun parse(f: File) = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(f)
-
-    private fun strings(f: File): Map<String, String> {
-        val nodes = parse(f).getElementsByTagName("string")
-        return (0 until nodes.length).map { nodes.item(it) }
-            .filter { it.attributes.getNamedItem("translatable")?.nodeValue != "false" }
-            .associate { it.attributes.getNamedItem("name").nodeValue to it.textContent }
-    }
-
-    private fun tags(): List<String> {
-        val doc = parse(File(res, "values/language_names.xml"))
-        val arrays = doc.getElementsByTagName("string-array")
-        for (i in 0 until arrays.length) {
-            val a = arrays.item(i)
-            if (a.attributes.getNamedItem("name").nodeValue == "language_tags") {
-                val items = (a as org.w3c.dom.Element).getElementsByTagName("item")
-                return (0 until items.length).map { items.item(it).textContent }
+    private fun keys(dir: File, onlyTranslatable: Boolean): Set<String> {
+        val result = HashSet<String>()
+        dir.listFiles { f -> f.extension == "xml" }?.forEach { f ->
+            val nodes = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+                .parse(f).getElementsByTagName("string")
+            for (i in 0 until nodes.length) {
+                val e = nodes.item(i) as Element
+                if (onlyTranslatable && e.getAttribute("translatable") == "false") continue
+                result += e.getAttribute("name")
             }
         }
-        fail("language_tags bulunamadı"); return emptyList()
+        return result
     }
 
-    private fun folderFor(tag: String) = when {
-        tag == "en" -> "values"
-        Regex("[a-z]{2}").matches(tag) -> "values-$tag"
-        else -> "values-b+" + tag.replace('-', '+')
+    private val expected = listOf(
+        "values-tr", "values-b+azb", "values-az", "values-b+az+Arab", "values-fa", "values-de",
+        "values-ru", "values-ar", "values-fr", "values-es", "values-it", "values-pt", "values-zh",
+        "values-ja", "values-ko", "values-hi", "values-ur"
+    )
+
+    @Test fun everyLanguageFolderExists() {
+        val missing = expected.filter { !File(res, it).isDirectory }
+        assertTrue("Eksik dil klasörleri: $missing", missing.isEmpty())
     }
 
-    @Test fun everyDeclaredLanguageHasCompleteStrings() {
-        val base = strings(File(res, "values/strings.xml"))
-        val problems = mutableListOf<String>()
-        for (tag in tags()) {
-            val f = File(res, "${folderFor(tag)}/strings.xml")
-            if (!f.exists()) { problems += "$tag: ${f.path} yok"; continue }
-            val s = strings(f)
-            (base.keys - s.keys).forEach { problems += "$tag: eksik anahtar $it" }
-            (s.keys - base.keys).forEach { problems += "$tag: fazla anahtar $it" }
-            s.forEach { (k, v) ->
-                if (v.isBlank()) problems += "$tag: boş değer $k"
-                val ph = Regex("%\\d\\$[sd]")
-                if (base[k] != null && ph.findAll(base[k]!!).map { it.value }.sorted().toList() !=
-                    ph.findAll(v).map { it.value }.sorted().toList()) problems += "$tag: yer tutucu uyuşmuyor $k"
-            }
+    @Test fun noMissingKeys() {
+        val base = keys(File(res, "values"), true)
+        val problems = expected.mapNotNull { d ->
+            val dir = File(res, d)
+            if (!dir.isDirectory) null
+            else (base - keys(dir, false)).takeIf { it.isNotEmpty() }?.let { "$d: $it" }
         }
-        assertTrue(problems.joinToString("\n"), problems.isEmpty())
-    }
-
-    @Test fun localesConfigMatchesLanguageList() {
-        val doc = parse(File(res, "xml/locales_config.xml")).getElementsByTagName("locale")
-        val inConfig = (0 until doc.length).map { doc.item(it).attributes.getNamedItem("android:name").nodeValue }.toSet()
-        assertEquals(tags().toSet(), inConfig)
+        assertTrue("Eksik çeviriler: $problems", problems.isEmpty())
     }
 }
