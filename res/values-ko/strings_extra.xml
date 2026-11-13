@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">이전 카탈로그 복원</string>
+    <string name="restore_ok">이전 카탈로그를 복원했습니다</string>
+    <string name="restore_failed">복원할 백업이 없습니다</string>
+    <string name="data_stale">데이터가 %1$d일 지났습니다. 업데이트하세요.</string>
+</resources>
