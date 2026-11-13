@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">اوولکی کاتالوقو برپا ائت</string>
+    <string name="restore_ok">اوولکی کاتالوق برپا اولوندو</string>
+    <string name="restore_failed">برپا اۆچون یدک نوسخه یوخدور</string>
+    <string name="data_stale">معلومات %1$d گون کؤهنهدیر. لوطفاً یئنیله.</string>
+</resources>
