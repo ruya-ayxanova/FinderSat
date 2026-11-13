@@ -35,6 +35,16 @@ class CatalogRepository(private val context: Context, private val dao: CatalogDa
     /** Verilen HTTPS adresinden yeni katalog indirir. Doğrulanmadan hiçbir şey değişmez; eski dosya yedeklenir. */
     suspend fun update(urlStr: String) = withContext(Dispatchers.IO) {
         val url = URL(urlStr.trim())
+            fun hasBackup(): Boolean = backups.listFiles()?.isNotEmpty() == true
+
+    /** En son yedeği geri yükler. Şu anki katalog da yeni bir yedek olarak saklanır. */
+    suspend fun restoreLatestBackup(): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching {
+            val latest = backups.listFiles()?.maxByOrNull { it.name }
+                ?: error("Yedek yok")
+            install(latest.readText())
+        }
+    }
         require(url.protocol == "https") { "Yalnızca https desteklenir" }
         val conn = url.openConnection() as HttpURLConnection
         conn.connectTimeout = 15_000
