@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">Restaurer le catalogue précédent</string>
+    <string name="restore_ok">Catalogue précédent restauré</string>
+    <string name="restore_failed">Aucune sauvegarde à restaurer</string>
+    <string name="data_stale">Les données datent de %1$d jours. Veuillez mettre à jour.</string>
+</resources>
