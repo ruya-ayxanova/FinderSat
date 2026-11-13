@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.prosatfinder
 
 import android.app.Application
@@ -60,7 +62,12 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun transponders(id: String) = dao.transponders(id)
 
-    init { viewModelScope.launch { repo.ensureLoaded(); meta.value = repo.meta() } }
+    init {
+        viewModelScope.launch {
+            repo.ensureLoaded()
+            meta.value = repo.meta()
+        }
+    }
 
     fun toggleFavorite(id: String, on: Boolean) = viewModelScope.launch {
         if (on) dao.addFavorite(Favorite(id)) else dao.removeFavorite(id)
@@ -70,6 +77,12 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val r = repo.update(Config.CATALOG_URL)
         meta.value = repo.meta()
         status.value = if (r.isSuccess) R.string.update_ok else R.string.update_failed
+    }
+
+    fun restore() = viewModelScope.launch {
+        val r = repo.restoreLatestBackup()
+        meta.value = repo.meta()
+        status.value = if (r.isSuccess) R.string.restore_ok else R.string.restore_failed
     }
 }
 
@@ -98,7 +111,7 @@ fun SatApp(vm: MainViewModel = viewModel()) {
     val meta by vm.meta.collectAsState()
     val status by vm.status.collectAsState()
     var expanded by remember { mutableStateOf<String?>(null) }
-    val grouped = remember(items) { items.groupBy { it.position } }  // aynı konumdaki uydular bir arada
+    val grouped = remember(items) { items.groupBy { it.position } }
 
     Column(Modifier.fillMaxSize().statusBarsPadding().padding(12.dp)) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -132,13 +145,17 @@ fun SatApp(vm: MainViewModel = viewModel()) {
         LazyColumn(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             grouped.forEach { (pos, list) ->
                 item(key = "h$pos") {
-                    Text(posText(pos), style = MaterialTheme.typography.titleSmall,
-                        modifier = Modifier.padding(top = 8.dp))
+                    Text(
+                        posText(pos), style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
                 }
                 items(list, key = { it.id }) { s ->
                     val fav = s.id in favs
-                    Card(onClick = { expanded = if (expanded == s.id) null else s.id },
-                        modifier = Modifier.fillMaxWidth()) {
+                    Card(
+                        onClick = { expanded = if (expanded == s.id) null else s.id },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
                         Column(Modifier.padding(12.dp)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
@@ -154,12 +171,21 @@ fun SatApp(vm: MainViewModel = viewModel()) {
                 }
             }
         }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            meta?.let {
-                Text(stringResource(R.string.catalog_info, it.version.toString(), it.date, it.source),
-                    modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodySmall)
-            }
+        meta?.let {
+            Text(
+                stringResource(R.string.catalog_info, it.version.toString(), it.date, it.source),
+                style = MaterialTheme.typography.bodySmall
+            )
+            val age = daysOld(it.date)
+            if (age != null && age > 90)
+                Text(
+                    stringResource(R.string.data_stale, age.toInt()),
+                    style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error
+                )
+        }
+        Row(Modifier.horizontalScroll(rememberScrollState())) {
             TextButton({ vm.update() }) { Text(stringResource(R.string.update_catalog)) }
+            TextButton({ vm.restore() }) { Text(stringResource(R.string.restore_backup)) }
         }
         status?.let { Text(stringResource(it), style = MaterialTheme.typography.bodySmall) }
     }
@@ -173,13 +199,16 @@ fun TransponderList(vm: MainViewModel, id: String) {
     list.forEach { Text(tpLine(it), style = MaterialTheme.typography.bodySmall) }
 }
 
-// Bilinmeyen alan "—" gösterilir, hiçbir değer uydurulmaz.
 fun tpLine(t: Transponder): String = listOf(
     (t.frequencyMhz?.let { "$it MHz" } ?: "—") + " " + (t.polarization ?: "—"),
     "SR " + (t.symbolRate?.let { "$it ksym/s" } ?: "—"),
     "FEC " + (t.fec ?: "—"),
     t.band ?: "—"
 ).joinToString(" · ")
+
+fun daysOld(date: String): Long? = runCatching {
+    java.time.temporal.ChronoUnit.DAYS.between(java.time.LocalDate.parse(date), java.time.LocalDate.now())
+}.getOrNull()
 
 @Composable
 fun posText(p: Double?): String = when {
@@ -207,7 +236,8 @@ fun CountryMenu(countries: List<String>, selected: String, onSelect: (String) ->
             Text("🌐 " + if (selected.isEmpty()) stringResource(R.string.filter_all) else name(selected))
         })
         DropdownMenu(open, { open = false }) {
-            DropdownMenuItem(text = { Text(stringResource(R.string.filter_all)) },
+            DropdownMenuItem(
+                text = { Text(stringResource(R.string.filter_all)) },
                 onClick = { open = false; onSelect("") })
             countries.sortedBy { name(it) }.forEach { c ->
                 DropdownMenuItem(text = { Text(name(c)) }, onClick = { open = false; onSelect(c) })
@@ -222,10 +252,12 @@ fun LanguageMenu() {
     Box {
         TextButton({ open = true }) { Text(stringResource(R.string.language)) }
         DropdownMenu(open, { open = false }) {
-            DropdownMenuItem(text = { Text(stringResource(R.string.language_system)) },
+            DropdownMenuItem(
+                text = { Text(stringResource(R.string.language_system)) },
                 onClick = { open = false; AppLanguage.apply(null) })
             AppLanguage.all.forEach { l ->
-                DropdownMenuItem(text = { Text(l.nativeName) },
+                DropdownMenuItem(
+                    text = { Text(l.nativeName) },
                     onClick = { open = false; AppLanguage.apply(l.tag) })
             }
         }
