@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">Восстановить предыдущий каталог</string>
+    <string name="restore_ok">Предыдущий каталог восстановлен</string>
+    <string name="restore_failed">Нет резервной копии для восстановления</string>
+    <string name="data_stale">Возраст данных: %1$d дн. Пожалуйста, обновите.</string>
+</resources>
