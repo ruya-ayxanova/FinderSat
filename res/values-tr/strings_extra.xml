@@ -1,0 +1,6 @@
+<resources>
+    <string name="restore_backup">Önceki kataloğu geri yükle</string>
+    <string name="restore_ok">Önceki katalog geri yüklendi</string>
+    <string name="restore_failed">Geri yüklenecek yedek yok</string>
+    <string name="data_stale">Veri %1$d gün önceki. Lütfen güncelle.</string>
+</resources>
