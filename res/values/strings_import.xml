@@ -1,0 +1,5 @@
+<resources>
+    <string name="import_csv">Import CSV file</string>
+    <string name="import_ok">CSV imported</string>
+    <string name="import_failed">Import failed. Previous data kept.</string>
+</resources>
