@@ -1,0 +1,5 @@
+<resources>
+    <string name="import_csv">CSV dosyası içe aktar</string>
+    <string name="import_ok">CSV içe aktarıldı</string>
+    <string name="import_failed">İçe aktarma başarısız. Önceki veri korundu.</string>
+</resources>
