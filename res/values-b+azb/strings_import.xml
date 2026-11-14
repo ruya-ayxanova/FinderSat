@@ -1,0 +1,5 @@
+<resources>
+    <string name="import_csv">CSV فایلینی ایمپورت ائت</string>
+    <string name="import_ok">CSV ایمپورت ائدیلدی</string>
+    <string name="import_failed">ایمپورت اوغورسوز اولدو. ائسکی معلومات ساخلانیلدی</string>
+</resources>
