@@ -93,4 +93,12 @@ class CatalogRepository(private val ctx: Context, private val db: AppDatabase) {
             install(latest.readText())
         }
     }
+
+    suspend fun importCsv(text: String, source: String): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching {
+            val version = (meta()?.version ?: 0) + 1
+            val json = CsvImporter.toCatalogJson(text, source, java.time.LocalDate.now().toString(), version)
+            install(json)
+        }
+    }
 }
